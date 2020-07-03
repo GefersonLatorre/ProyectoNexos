@@ -1,0 +1,18 @@
+<div>
+  <h1 class="display-5 text-center">Lista Doctores</h1>
+</div>
+<hr>
+<table class="table table-hover">
+  <tr style="color: white;" *ngFor="let pd of serviceCrudD.list">
+    <td (click)="dataD.emit(pd)">{{pd.Nombre}}</td>
+    <td (click)="dataD.emit(pd)">{{pd.Especialidad}}</td>
+    <td (click)="dataD.emit(pd)">{{pd.Credencial}}</td>
+    <td (click)="dataD.emit(pd)">{{pd.Hospital}}</td>
+    <td>
+      <i *ngIf="!boton" class="fas fa-user-plus fa-lg text-warning" (click)="viewPanelsD.emit(pd)"></i>
+    </td>
+    <td>
+      <i *ngIf="boton" class="fas fa-plus-circle fa-lg text-success" (click)="insertRecord(pd.Id)"></i>
+    </td>
+  </tr>
+</table>

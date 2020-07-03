@@ -1,0 +1,83 @@
+CREATE DATABASE [CitasDB]
+GO
+
+USE [CitasDB]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Doctores](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [nvarchar](100) NOT NULL,
+	[Especialidad] [nvarchar](50) NOT NULL,
+	[Credencial] [nvarchar](50) NOT NULL,
+	[Hospital] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_doctores] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [CitasDB]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Pacientes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [nvarchar](100) NOT NULL,
+	[Seguro_Social] [nvarchar](50) NOT NULL,
+	[Codigo_Postal] [nvarchar](50) NOT NULL,
+	[Telefono] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_pacientes] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [CitasDB]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Citas](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Id_Doctor] [int] NOT NULL,
+	[Id_Paciente] [int] NOT NULL,
+ CONSTRAINT [PK_citas] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Citas]  WITH CHECK ADD  CONSTRAINT [FK_Citas_Doctores] FOREIGN KEY([Id_Doctor])
+REFERENCES [dbo].[Doctores] ([Id])
+GO
+
+ALTER TABLE [dbo].[Citas] CHECK CONSTRAINT [FK_Citas_Doctores]
+GO
+
+ALTER TABLE [dbo].[Citas]  WITH CHECK ADD  CONSTRAINT [FK_Citas_Pacientes] FOREIGN KEY([Id_Paciente])
+REFERENCES [dbo].[Pacientes] ([Id])
+GO
+
+ALTER TABLE [dbo].[Citas] CHECK CONSTRAINT [FK_Citas_Pacientes]
+GO
+
+
+

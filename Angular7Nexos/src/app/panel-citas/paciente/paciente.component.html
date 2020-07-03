@@ -1,0 +1,60 @@
+<form #form="ngForm" autocomplete="off">
+    <div>
+        <h1 class="display-5 text-center">Registro Paciente</h1>
+    </div>
+    <hr>
+    <input type="hidden" name="Id" [value]="datosP.Id">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-user-shield fa-lg" [class.green-icon]="Nombre.valid"
+                        [class.red-icon]="Nombre.invalid && Nombre.touched"></i>
+                </div>
+            </div>
+            <input name="Nombre" #Nombre="ngModel" [(ngModel)]="datosP.Nombre" class="form-control" placeholder="Nombre"
+                required maxlength="100" minlength="2">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-cogs fa-lg" [class.green-icon]="Seguro_Social.valid"
+                        [class.red-icon]="Seguro_Social.invalid && Seguro_Social.touched"></i>
+                </div>
+            </div>
+            <input name="Seguro_Social" #Seguro_Social="ngModel" [(ngModel)]="datosP.Seguro_Social" class="form-control"
+                placeholder="Seguro Social" required maxlength="50" minlength="4">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-envelope fa-lg" [class.green-icon]="Codigo_Postal.valid"
+                        [class.red-icon]="Codigo_Postal.invalid && Codigo_Postal.touched"></i>
+                </div>
+            </div>
+            <input name="Codigo_Postal" #Codigo_Postal="ngModel" [(ngModel)]="datosP.Codigo_Postal" class="form-control"
+                placeholder="Codigo Postal" required maxlength="50" minlength="4">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-phone fa-lg" [class.green-icon]="Telefono.valid"
+                        [class.red-icon]="Telefono.invalid && Telefono.touched"></i>
+                </div>
+            </div>
+            <input name="Telefono" #Telefono="ngModel" [(ngModel)]="datosP.Telefono" class="form-control"
+                placeholder="Telefono" required maxlength="50" minlength="4">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="onSubmit()" [disabled]="form.invalid"><i
+                class="fas fa-database"></i> Enviar</button>
+    </div>
+</form>

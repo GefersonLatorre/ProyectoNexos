@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a style="font-size: 28px;" class="navbar-brand text-white">Registro Citas |</a>
+    <ul style="margin-left: 42px;" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <span *ngIf="panels" class="navbar-brand text-white" (click)="parentP(false)">Doctores</span>
+            <span *ngIf="!panels" class="navbar-brand text-white" (click)="parentP(true)">Pacientes</span>
+        </li>
+    </ul>
+</nav>
+<div class="jumbtron">
+    <br>
+    <div class="row">
+        <div class="col-md-5">
+            <app-doctor *ngIf="!panels"></app-doctor>
+        </div>
+        <div class="col-md-7">
+            <app-doctor-list [vd]="vd" *ngIf="!panels" (viewPanelsD)="parentD($event)" (dataD)="parentfuncD($event)"
+                (updateDataP)="updateDataP()">
+            </app-doctor-list>
+        </div>
+        <div class="col-md-5">
+            <app-paciente *ngIf="panels"></app-paciente>
+        </div>
+        <div class="col-md-7">
+            <app-paciente-list [vp]="vp" *ngIf="panels" (viewPanelsP)="parentP($event)" (dataP)="parentfuncP($event)"
+                (updateDataD)="updateDataD()" (viewPanelDoctores)="viewPanelDoctores($event)"></app-paciente-list>
+        </div>
+        <div class="col-md-5">
+            <app-doctor-list-paciente [nameDoctor]="nameDoctor" [vp]="vp" *ngIf="listP"></app-doctor-list-paciente>
+            <app-paciente-list-doctor [namePaciente]="namePaciente" [vd]="vd" *ngIf="listD"></app-paciente-list-doctor>
+        </div>
+    </div>
+</div>

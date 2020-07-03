@@ -1,0 +1,14 @@
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\bin\Debug\netcoreapp2.2\WebAPINexos.deps.json
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\bin\Debug\netcoreapp2.2\WebAPINexos.runtimeconfig.json
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\bin\Debug\netcoreapp2.2\WebAPINexos.runtimeconfig.dev.json
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\bin\Debug\netcoreapp2.2\WebAPINexos.dll
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.csprojAssemblyReference.cache
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.csproj.CoreCompileInputs.cache
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.RazorAssemblyInfo.cache
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.RazorAssemblyInfo.cs
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.AssemblyInfoInputs.cache
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.AssemblyInfo.cs
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.RazorTargetAssemblyInfo.cache
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\bin\Debug\netcoreapp2.2\WebAPINexos.pdb
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.dll
+C:\Users\Geferson Latorre\source\repos\WebAPINexos\WebAPINexos\obj\Debug\netcoreapp2.2\WebAPINexos.pdb

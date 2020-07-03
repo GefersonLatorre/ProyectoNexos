@@ -1,0 +1,19 @@
+<div>
+  <h1 class="display-5 text-center">Pacientes Doctor(a)<br>{{nameDoctor}}</h1>
+</div>
+<hr>
+<div class="row" *ngIf="loadingPacientes">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="row" *ngIf="!loadingPacientes">
+  <table class="table table-hover">
+    <tr style="color: white;" *ngFor="let pd of serviceCrudC.list">
+      <td>{{(pacientesCodigos[pd.Id_Paciente])? pacientesCodigos[pd.Id_Paciente] : 'No Encontrado'}}</td>
+      <td>
+        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.Id)"></i>
+      </td>
+    </tr>
+  </table>
+</div>

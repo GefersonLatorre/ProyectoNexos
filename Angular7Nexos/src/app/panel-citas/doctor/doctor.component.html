@@ -1,0 +1,60 @@
+<form #form="ngForm" autocomplete="off">
+    <div>
+        <h1 class="display-5 text-center">Registro Doctor</h1>
+    </div>
+    <hr>
+    <input type="hidden" name="Id" [value]="datosD.Id">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-stethoscope fa-lg" [class.green-icon]="Nombre.valid"
+                        [class.red-icon]="Nombre.invalid && Nombre.touched"></i>
+                </div>
+            </div>
+            <input name="Nombre" #Nombre="ngModel" [(ngModel)]="datosD.Nombre" class="form-control" placeholder="Nombre"
+                required maxlength="100" minlength="2">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-diagnoses fa-lg" [class.green-icon]="Especialidad.valid"
+                        [class.red-icon]="Especialidad.invalid && Especialidad.touched"></i>
+                </div>
+            </div>
+            <input name="Especialidad" #Especialidad="ngModel" [(ngModel)]="datosD.Especialidad" class="form-control"
+                placeholder="Especialidad" required maxlength="50" minlength="4">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-address-card fa-lg" [class.green-icon]="Credencial.valid"
+                        [class.red-icon]="Credencial.invalid && Credencial.touched"></i>
+                </div>
+            </div>
+            <input name="Credencial" #Credencial="ngModel" [(ngModel)]="datosD.Credencial" class="form-control"
+                placeholder="Credencial" required maxlength="50" minlength="4">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fas fa-map-marked-alt fa-lg" [class.green-icon]="Hospital.valid"
+                        [class.red-icon]="Hospital.invalid && Hospital.touched"></i>
+                </div>
+            </div>
+            <input name="Hospital" #Hospital="ngModel" [(ngModel)]="datosD.Hospital" class="form-control"
+                placeholder="Hospital" required maxlength="50" minlength="4">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="onSubmit()" [disabled]="form.invalid"><i
+                class="fas fa-database"></i> Enviar</button>
+    </div>
+</form>
